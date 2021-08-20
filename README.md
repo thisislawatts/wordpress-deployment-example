@@ -12,4 +12,4 @@ Overview
 ---
 
 Production environment:
-[https://lukes-example-site.onyx-sites.io/](https://lukes-example-site.onyx-sites.io/)
+[https://lukes-example-site.onyx-sites.io/](https://lukes-example-site.onyx-sites.io)
