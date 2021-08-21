@@ -27,7 +27,7 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-     - name: SFTP Sync
+      - name: SFTP Sync
         uses: swillner/sftp-sync-action@v1.0
         with:
           server: "${{ secrets.SSH_HOST }}"
