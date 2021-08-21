@@ -25,14 +25,19 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-        
+      - run: |
+          mkdir ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/gh_actions_key
+          chmod 600 ~/.ssh/gh_actions_key
+          rsync -avzr --delete -e "ssh -p ${{ secrets.SSH_PORT }} -i ~/.ssh/gh_actions_key -o StrictHostKeyChecking=no" $GITHUB_WORKSPACE ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}}:/var/www/html/
+
       # Runs a single command using the runners shell
       - name: Deploy
         uses: burnett01/rsync-deployments@5.1
         with:
           switches: -avzr --delete
           path: wp-content/themes
-          remote_path: ~/
+          remote_path: /var/www/html/
           remote_host: ${{ secrets.SSH_HOST }}
           remote_port: ${{ secrets.SSH_PORT }}
           remote_user: ${{ secrets.SSH_USER }}
