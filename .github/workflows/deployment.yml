@@ -30,4 +30,4 @@ jobs:
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/gh_actions_key
           chmod 600 ~/.ssh/gh_actions_key
           echo "${{ secrets.SSH_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
-          rsync -avr --delete --exclude '.git*' -e "ssh -vvvv -p ${{ secrets.SSH_PORT }} -i ~/.ssh/gh_actions_key" $GITHUB_WORKSPACE ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}}:/var/www/html/
+          scp -P ${{ secrets.SSH_PORT }} -r wp-content/themes/demo ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/html/wp-content/themes/
