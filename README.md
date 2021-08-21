@@ -40,7 +40,7 @@ Production environment:
 
 Hit list
 
-[ ] Manual pushes to `main` are disabled
+[X] Manual pushes to `main` are disabled
 [ ] Pushes to `main` are deployed to *Staging*
 [ ] Any other PRs are deployed to *Development*
 [ ] Pushes/merges to `production` are deployed to Production
