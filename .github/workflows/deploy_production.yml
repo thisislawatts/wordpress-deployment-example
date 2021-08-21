@@ -5,6 +5,7 @@ on:
   # Triggers the workflow on push or pull request events but only for the production branch
   push:
     branches: 
+    - main # Temporary whilst I investigate configuration steps
     - production
 
   # Allows you to run this workflow manually from the Actions tab
