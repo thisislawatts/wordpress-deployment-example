@@ -36,3 +36,12 @@ Proposed workflow
 
 Production environment:
 [https://lukes-example-site.onyx-sites.io/](https://lukes-example-site.onyx-sites.io)
+
+
+Hit list
+
+[ ] Manual pushes to `main` are disabled
+[ ] Pushes to `main` are deployed to *Staging*
+[ ] Any other PRs are deployed to *Development*
+[ ] Pushes/merges to `production` are deployed to Production
+[ ] PR is automatically deployed to 
