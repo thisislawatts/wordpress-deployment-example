@@ -31,4 +31,4 @@ jobs:
         with:
           destination_branch: "production"
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          pr_title: ":robot: *Release PR* for ${{ github.ref }}"              # Full markdown support, requires pr_title to be set
+          pr_title: ":robot: Release PR
