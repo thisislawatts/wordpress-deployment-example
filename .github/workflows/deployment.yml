@@ -34,5 +34,6 @@ jobs:
           user: "${{ secrets.SSH_USER }}"
           user_private_key: "${{ secrets.SSH_PRIVATE_KEY }}"
           host_public_key: "${{ secrets.SSH_PUBLIC_KEY }}"
+          port: "${{ serets.SSH_PORT }}"
           remote: /var/www/html
           mirror_options: "--exclude-glob=.git*/ --verbose"
