@@ -35,5 +35,5 @@ jobs:
           flags: '-avzr --delete'
           options: ''
           ssh_options: '-p ${{secrets.SSH_PORT}}'
-          src: '.'
+          src: 'wp-content/'
           dest: '${{secrets.SSH_USER}}@${{secrets.SSH_HOST}}:/var/www/html'
