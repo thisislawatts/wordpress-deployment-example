@@ -25,13 +25,13 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - run: echo "🔎 ${{ secrets.SSH_USER }}"
         
       # Runs a single command using the runners shell
       - name: Deploy
         uses: burnett01/rsync-deployments@5.1
         with:
           switches: -avzr --delete
+          path: wp-content/themes
           remote_path: ~/
           remote_host: ${{ secrets.SSH_HOST }}
           remote_port: ${{ secrets.SSH_PORT }}
