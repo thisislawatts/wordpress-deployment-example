@@ -27,13 +27,12 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: SFTP Sync
-        uses: swillner/sftp-sync-action@v1.0
+      - name: SFTP Deploy
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.1
         with:
+          username: "${{ secrets.SSH_USER }}"
           server: "${{ secrets.SSH_HOST }}"
-          user: "${{ secrets.SSH_USER }}"
-          user_private_key: "${{ secrets.SSH_PRIVATE_KEY }}"
-          host_public_key: "${{ secrets.SSH_PUBLIC_KEY }}"
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: "${{ secrets.SSH_PORT }}"
-          remote: /var/www/html
-          mirror_options: "--exclude-glob=.git*/ --verbose"
+          local_path: './'
+          remote_path: '/var/www/html'
