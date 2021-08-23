@@ -4,10 +4,10 @@ name: Deploy to Development environment
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events for branches except `preview` and `production`
+  # Triggers the workflow on push or pull request events for branches except `staging` and `production`
   push:
     branches-ignore: 
-    - preview
+    - staging
     - production
 
   # Allows you to run this workflow manually from the Actions tab
