@@ -8,3 +8,8 @@
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 */
+
+* {
+    border: .5rem solid #72EABF;
+    font-size: 12vh;
+}
