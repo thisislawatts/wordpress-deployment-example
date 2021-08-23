@@ -1,11 +1,11 @@
-name: Deploy to Preview/Staging environment
+name: Deploy to staging/Staging environment
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the `preview` branch
+  # Triggers the workflow on push or pull request events but only for the `staging` branch
   push:
     branches: 
-    - preview
+    - staging
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
